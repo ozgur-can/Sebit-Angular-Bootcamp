@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .webIcon {
+        display: block;
+      }
+
+      .mobileIcon {
+        display: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .webIcon {
+          display: none;
+        }
+
+        .mobileIcon {
+          display: block;
+        }
+
+        .mobileLink {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="mobileIcon" id="mobileIcon" onclick="toggle()">
+        <img src="../../img/icon.png" width="30px" alt="" />
+      </div>
+      <div class="webIcon">
+        <img src="../../img/burgerlogo.png" width="50px" alt="" />
+      </div>
+      <div class="mobileLink" id="mobileLink">
+        <a href="" class="headerLink">Anasayfa</a>
+        <a href="" class="headerLink">Hakkimizda</a>
+        <a href="" class="headerLink">Iletisim</a>
+      </div>
+    </div>
+
+    <div
+      style="
+        background-image: url(../../img/banner.jpg);
+        height: 400px;
+        position: relative;
+      "
+    >
+      <div class="bannerDiv">
+        <h3>banner</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+          veniam explicabo facere a debitis quis quod quas nesciunt quam
+          repellendus dolores beatae id aspernatur, animi esse deserunt fugit
+          praesentium unde?
+        </p>
+      </div>
+    </div>
+
+    <div class="cardRow">
+      <div class="card">
+        <img class="cardImg" src="../../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 1</h3>
+        <p class="cardDescription">
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 2</h3>
+        <p class="cardDescription">
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 3</h3>
+        <p class="cardDescription">
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 4</h3>
+        <p class="cardDescription">
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+    </div>
+
+    <div class="cardRow">
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 5</h3>
+        <p>
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 6</h3>
+        <p>
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 7</h3>
+        <p>
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="../img/burger.jpg" alt="" />
+        <h3 class="cardHeader">Burger 8</h3>
+        <p>
+          100gr Dana Eti (Louisiana Sos, Yeşillik, Turşu, Karamelize Soğan,
+          Jalapeno Biber, Közlenmiş Kırmızı Biber, Cheddar Peynir) + Kızarmış
+          Patates + İçecek
+        </p>
+        <p class="cardPrice">
+          45.99 <span style="font-style: italic">TL</span>
+        </p>
+        <button class="cardButton">Satin Al</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footerChild">
+        <div>Anasayfa</div>
+        <div>Hakkimizda</div>
+        <div>Iletisim</div>
+      </div>
+      <img src="../img/burgerlogo.png" width="100px" alt="" />
+      <div class="footerChild">
+        <div>Burgerler</div>
+        <div>Restoranlar</div>
+        <div>Kariyer</div>
+      </div>
+    </div>
+
+    <script>
+    const mobileLink = document.getElementById('mobileLink')
+      function toggle() {
+        if (mobileLink.style.display !== 'none') {
+            mobileLink.style.display = 'none'
+        } else {
+            mobileLink.style.display = 'flex'
+        }
+      }
+    </script>
+  </body>
+</html>
