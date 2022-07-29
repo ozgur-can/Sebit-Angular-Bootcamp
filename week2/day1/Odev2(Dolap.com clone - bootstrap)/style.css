@@ -1,0 +1,129 @@
+.cardContainer {
+  width: auto;
+  height: 459px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid whitesmoke;
+}
+
+.photo > img {
+  height: 270px;
+  width: 100%;
+}
+.photosTag {
+  width: 70px;
+  height: 30px;
+  background-color: #e74c3c;
+  color: white;
+  position: relative;
+  top: -40px;
+  padding-left: 10px;
+  margin-bottom: -30px;
+  font-size: 20px;
+}
+
+.cardTopRightIcon {
+  border: 1px solid #25d6a2;
+  border-radius: 15%;
+  padding: 1.5px 10px;
+}
+
+/* TODO add img crop */
+.cardTopUserIcon > img {
+  width: 50px;
+}
+
+.mostSearchedWords {
+  background-color: white;
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.mostSearchedWordsButtons > button {
+  background-color: white;
+  padding: 7px 10px;
+  border: 1px solid #3b3b3b3b;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.mostSearchedWordsButtons > button:hover {
+  background-color: #3b3b3b;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+footer {
+  background-image: url("https://cdn.dolap.com/web/images/bg-footer.jpg");
+  height: 447px;
+  background-size: cover;
+}
+
+.footerContainer {
+  max-width: 810px;
+  color: white;
+}
+
+.footerStoreLinks {
+  list-style: none;
+}
+
+.footerStoreLinks > li:nth-child(1) {
+  margin-right: 4px;
+}
+
+.footerStoreLinks > li:nth-child(2) {
+  margin-left: 4px;
+}
+
+.footerUL {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.footerUL > li {
+  margin-bottom: 7px;
+}
+
+.footerULCol2 {
+  list-style: none;
+  columns: 2;
+  column-gap: 50px;
+  padding-left: 0px;
+}
+
+.footerULCol2 > li {
+  margin-bottom: 7px;
+}
+
+.socialLogo {
+  border: 2px solid #3b3b3b;
+  border-radius: 100%;
+  padding: 11px;
+}
+
+.socialLogo:hover {
+  background-color: #3b3b3b;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.socialLogo > svg:hover {
+  fill: #60d3b1;
+}
+
+.socialLogo:nth-child(1) {
+  margin-right: 10px;
+}
+
+.socialLogo:nth-child(3) {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: auto;
+  }
+}
