@@ -8,9 +8,6 @@
 
 <br>
 <h2 align="center"><b>Tasks</b></h2>
-
----
-
 <br>
 
 1. **Week 1**
