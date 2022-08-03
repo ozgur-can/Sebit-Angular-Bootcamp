@@ -1,15 +1,10 @@
 const list = document.getElementById("todoCard__list");
 const addItemButton = document.getElementById("todoCard__addNewItemButton");
-const completedCounter = document.getElementById(
-  "todoCard__completedItemCounter"
-);
+const completedCounter = document.getElementById("todoCard__completedItemCounter");
 const itemCounter = document.getElementById("todoCard_itemCounter");
 
 // listeners for add new todo item
-document.addEventListener(
-  "keyup",
-  (event) => event.key === "Enter" && addItemButtonOnClick()
-);
+document.addEventListener("keyup", (event) => event.key === "Enter" && addItemButtonOnClick());
 addItemButton.addEventListener("click", addItemButtonOnClick);
 
 function addItemButtonOnClick() {
@@ -110,22 +105,17 @@ function createDOMItem(itemId, itemText, isCompleted) {
 
   // update style & input check & completedCounter if task is already completed
   if (isCompleted) {
-    const domItem = [...list.children].find(
-      (item) => item.getAttribute("itemId") == itemId
-    );
+    const domItem = [...list.children].find((item) => item.getAttribute("itemId") == itemId);
     domItem.classList.add("todoCard__item--completed");
 
     checkbox.checked = true;
-    completedCounter.textContent =
-      parseInt(completedCounter.textContent, 10) + 1;
+    completedCounter.textContent = parseInt(completedCounter.textContent, 10) + 1;
   }
 }
 
 // show items in todo card
 function renderItems() {
-  todoItems.forEach((item) =>
-    createDOMItem(item.id, item.text, item.isCompleted)
-  );
+  todoItems.forEach((item) => createDOMItem(item.id, item.text, item.isCompleted));
   itemCounter.textContent = list.children.length;
 }
 
@@ -140,19 +130,15 @@ function updateDOMItem(itemId) {
 
   // access dom item that will be updated
   const itemStatus = changeItemStatus(item);
-  const domItem = [...list.children].find(
-    (item) => item.getAttribute("itemId") == itemId
-  );
+  const domItem = [...list.children].find((item) => item.getAttribute("itemId") == itemId);
 
   // add or remove 'todoCard__item--completed' class & update completed counter
   if (itemStatus) {
     domItem.classList.add("todoCard__item--completed");
-    completedCounter.textContent =
-      parseInt(completedCounter.textContent, 10) + 1;
+    completedCounter.textContent = parseInt(completedCounter.textContent, 10) + 1;
   } else {
     domItem.classList.remove("todoCard__item--completed");
-    completedCounter.textContent =
-      parseInt(completedCounter.textContent, 10) - 1;
+    completedCounter.textContent = parseInt(completedCounter.textContent, 10) - 1;
   }
 }
 
@@ -163,9 +149,7 @@ function changeItemStatus(todoItem) {
 // delete dom item with id
 function deleteDOMItem(itemId) {
   // access dom item with itemId
-  const domItem = [...list.children].find(
-    (item) => item.getAttribute("itemId") == itemId
-  );
+  const domItem = [...list.children].find((item) => item.getAttribute("itemId") == itemId);
 
   // exit if dom item doesn't exist
   if (!domItem) {
@@ -180,8 +164,7 @@ function deleteDOMItem(itemId) {
 
   // update counters
   if (item.isCompleted) {
-    completedCounter.textContent =
-      parseInt(completedCounter.textContent, 10) - 1;
+    completedCounter.textContent = parseInt(completedCounter.textContent, 10) - 1;
   }
   itemCounter.textContent = list.children.length;
 }
