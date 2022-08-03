@@ -90,6 +90,7 @@ function createDOMItem(itemId, itemText, isCompleted) {
   const deleteButton = document.createElement("button");
   const deleteButtonText = document.createTextNode("del");
   deleteButton.appendChild(deleteButtonText);
+  deleteButton.classList.add("todoCard__deleteItemButton");
   deleteButton.addEventListener("click", () => deleteDOMItem(itemId));
 
   // checkbox & delete button
