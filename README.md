@@ -20,4 +20,4 @@
    2. Responsive Design Clone (Dolap.com) <b><i>[code:books:](<https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week2/day1/Odev2(Dolap.com-Clone-Bootstrap)>), [web:rocket:](<https://ozgurdevo.github.io/Sebit-Angular-Bootcamp/week2/day1/Odev2(Dolap.com-Clone-Bootstrap)>)</i></b>
 3. **Week 3**
    1. To-do list app (HTML, CSS, JS) <b><i>[code:books:](https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week3/day1/todo-app-js), [web:rocket:](https://ozgurdevo.github.io/Sebit-Angular-Bootcamp/week3/day1/todo-app-js/)</i></b>
-   2. Child to Parent example (Output directive, Angular) <b><i>[code:books:](https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week3/day1/ChildToParent)</i></b>
+   2. Child to Parent example (Output directive, Angular) <b><i>[code:books:](https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week3/day1/ChildToParent), [web:rocket:](https://child-to-parent-angular.netlify.app)</i></b>
