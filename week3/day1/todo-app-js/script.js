@@ -80,6 +80,7 @@ function createDOMItem(itemId, itemText, isCompleted) {
 
   // parent dom element for checkbox & delete button
   const todoItemButtons = document.createElement("div");
+  todoItemButtons.classList.add("todoCard__itemButtons");
 
   // checkbox input with onClick event
   const checkbox = document.createElement("input");
