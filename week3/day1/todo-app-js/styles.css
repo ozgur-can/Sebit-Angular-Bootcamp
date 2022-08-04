@@ -11,7 +11,7 @@
     --deleteButtonActiveBgColor: darkgray;
     --blockSpace: 12px;
     --rowCount: 7;
-    --itemHeight: calc((400px - 3 * var(--blockSpace)) / var(--rowCount));
+    --itemHeight: calc((var(--todoCardHeight) - 3 * var(--blockSpace)) / var(--rowCount));
 }
 
 .todoCard {
@@ -33,7 +33,7 @@
     justify-content: space-between;
     background-color: var(--headerColor);
     color: #fff;
-    min-height: 50px;
+    height: var(--itemHeight);
     padding: 0 var(--blockSpace);
 }
 
@@ -87,6 +87,7 @@
 .todoCard__item--completed {
     background-color: var(--itemCompletedBgColor);
 }
+
 .todoCard__item--completed>span {
     text-decoration: line-through;
 }
