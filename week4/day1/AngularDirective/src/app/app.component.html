@@ -1,0 +1,27 @@
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    
+<nav>
+  <ul class="pagination">
+    <li class="page-item" [ngClass]="currentPage === 0 ? 'disabled' : ''">
+      <a class="page-link" (click)="currentPage = currentPage - 1">Önceki</a>
+    </li>
+    <li class="page-item" [ngClass]="i === currentPage ? 'active' : ''" *ngFor="let img of images; let i = index">
+      <!-- onchange with component function -->
+      <!-- <a class="page-link" (click)="onPageChange(i)">{{i + 1}}</a> -->
+      <!-- <img width="200" *ngIf="i === currentPage" [src]="images[i].url" alt="" srcset=""> -->
+      
+      <!-- onchange with inline function -->
+      <a class="page-link" (click)="currentPage = i">{{i + 1}}</a>
+    </li>
+    <li class="page-item" [ngClass]="currentPage === images.length - 1 ? 'disabled' : ''">
+      <a (click)="currentPage = currentPage + 1" class="page-link">Sonraki</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h4 class="text-align-center">{{images[currentPage].title}}</h4>
+  <img width="250" [src]="images[currentPage].url">
+</div>
+
+</div>
