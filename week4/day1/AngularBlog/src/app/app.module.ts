@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { BaseService } from './services/base.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
