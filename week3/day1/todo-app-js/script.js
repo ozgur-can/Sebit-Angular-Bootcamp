@@ -1,7 +1,7 @@
 const list = document.getElementById("todoCard__list");
 const addItemButton = document.getElementById("todoCard__addNewItemButton");
 const completedCounter = document.getElementById("todoCard__completedItemCounter");
-const itemCounter = document.getElementById("todoCard_itemCounter");
+const itemCounter = document.getElementById("todoCard__itemCounter");
 
 // listeners for add new todo item
 document.addEventListener("keyup", (event) => event.key === "Enter" && addItemButtonOnClick());
