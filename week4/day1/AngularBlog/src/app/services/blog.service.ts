@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@microsoft/signalr';
+import { IPost } from '../interfaces';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -12,5 +13,9 @@ export class BlogService extends BaseService {
 
   public getPosts() {
     return this.base.getReq('/posts');
+  }
+
+  public updatePost(id: number, data: IPost) {
+    return this.base.putReq(`/posts/${id}`, data);
   }
 }

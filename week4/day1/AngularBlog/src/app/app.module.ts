@@ -9,11 +9,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseService } from './services/base.service';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BlogDialogComponent } from './home/blog-dialog/blog-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'; 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BlogDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,12 @@ import { BaseService } from './services/base.service';
     MatButtonModule,
     BrowserAnimationsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]

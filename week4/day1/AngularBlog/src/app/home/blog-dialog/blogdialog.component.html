@@ -1,0 +1,26 @@
+<div class="d-flex flex-column">
+    <div class="d-flex justify-content-between align-items-center">
+        <h3 class="m-0">{{!willUpdate ? 'Post Show' : 'Post Edit '}}</h3>
+        <button mat-button class="fs-4" (click)="closeDialog()">X</button>
+    </div>
+    <form *ngIf="willUpdate" action="" [formGroup]="postForm" class="d-flex flex-column">
+        <mat-form-field>
+            <mat-label>Post title</mat-label>
+            <input class="w-100" matInput type="text" formControlName="title" placeholder="title..">
+            <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+              Post title is must 
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Post body</mat-label>
+            <textarea matInput formControlName="body" cols="40" rows="6"></textarea>
+            <mat-error *ngIf="postForm.get('body')?.hasError('required')">
+              Post body is must
+            </mat-error>
+          </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button>
+        </div>
+    </form>
+</div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IPost } from '../interfaces';
 import { BlogService } from '../services/blog.service';
-
+import {MatDialog} from '@angular/material/dialog';
+import { BlogDialogComponent } from './blog-dialog/blog-dialog.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,15 +11,37 @@ import { BlogService } from '../services/blog.service';
 })
 export class HomeComponent implements OnInit {
   posts: IPost[] = [];
+  page: number = 1;
+  pageSize: number = 8;
 
   constructor(
-    private blogService: BlogService
+    private blogService: BlogService,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
+    this.getPostList();
+  }
+
+  getPostList() {
     this.blogService
     .getPosts()
     .subscribe((data) => this.posts = data);
+  }
+  
+  openDialog(post: IPost, willUpdate: boolean) {
+    const dialogRef = this.dialog.open(BlogDialogComponent, {
+      width: '450px',
+      data: { post, willUpdate }
+    });
+    
+    // update UI (title & body values) after we send post request to API
+    dialogRef.afterClosed().subscribe((updatedPost: IPost) => {
+      if (updatedPost) {
+        post.title = updatedPost.title;
+        post.body = updatedPost.body;
+      }
+    });
   }
 
 }
