@@ -29,6 +29,7 @@
    1. To-do list app (HTML, CSS, JS) <b><i>[code:books:](https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week3/day1/todo-app-js) [live:rocket:](https://ozgurdevo.github.io/Sebit-Angular-Bootcamp/week3/day1/todo-app-js/)</i></b>
    2. Child to Parent example (Output directive, Angular) <b><i>[code:books:](https://github.com/ozgurdevo/Sebit-Angular-Bootcamp/tree/main/week3/day1/ChildToParent) [live:rocket:](https://child-to-parent-angular.netlify.app)</i></b>
 4. **Week 4**
+   1. Angular custom pipe <b><i>[code:books:](https://github.com/ozgurdevo/Angular-AsciiArt-Pipe) [live:rocket:](https://angular-asciiart-pipe.netlify.app/)</i></b>
 
 
 </div>
