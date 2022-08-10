@@ -31,6 +31,16 @@
 4. **Week 4**
    1. Angular custom pipe <b><i>[code:books:](https://github.com/ozgurdevo/Angular-AsciiArt-Pipe) [live:rocket:](https://angular-asciiart-pipe.netlify.app/)</i></b>
 
+</div>
+
+<br>
+<h2 align="center"><b>Side projects</b></h2>
+<br>
+
+<div>
+
+1. **Angular Search App**
+   1. Animated & Responsive search component with Angular & Tailwind CSS <b><i>[code:books:](https://github.com/ozgurdevo/Angular-Search-App/) [live:rocket:](https://angular-search-app.netlify.app/)</i></b>
 
 </div>
 
