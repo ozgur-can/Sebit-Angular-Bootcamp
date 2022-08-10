@@ -15,7 +15,7 @@
 | Day 2 | Responsive Design, CSS Properties, Display, Position, Flex, Color, etc. | JS Data Types, Break-Continue, If-Else, Switch, Loops, Closure | Angular Reactive Forms, Angular Form Validators, Form Group, Form Builder, Abstract Control | Blog App with Angular & JSON API (continue)                 |        |        |
 
 <br>
-<h2 align="center"><b>Tasks</b></h2>
+<h2 align="center"><b>Tasks / Assignments</b></h2>
 <br>
 
 <div>
