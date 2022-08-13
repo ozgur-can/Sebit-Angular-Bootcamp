@@ -24,17 +24,17 @@ export class BlogViewComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
 
     // get post data for given id
-    this.blogService.getPostById(parseInt(this.id)).subscribe(
+    this.blogService.getPostById(this.id).subscribe(
       (data: IPost) => {
         this.post = data;
         // get specific comments
-        this.commentService.getComments().subscribe((data: []) => {
+        this.commentService.getComments().subscribe((data: IComment[]) => {
           this.comments = data.filter(
-            (it: IComment) => it?.postId === this.post?.id
+            (comment: IComment) => comment?.postId === this.post?.id
           );
         });
       },
-      (error) => console.log(error)
+      (error) => console.error(error)
     );
   }
 

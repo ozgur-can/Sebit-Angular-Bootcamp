@@ -5,25 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseService } from './services/base.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BlogDialogComponent } from './home/blog-dialog/blog-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BlogViewComponent } from './home/blog-view/blog-view.component';
-import { BlogUpdateComponent } from './home/blog-update/blog-update.component'; 
+import { BlogUpdateComponent } from './home/blog-update/blog-update.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NotificationComponent } from './home/notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BlogDialogComponent,
     BlogViewComponent,
     BlogUpdateComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +38,9 @@ import { BlogUpdateComponent } from './home/blog-update/blog-update.component';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [BaseService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

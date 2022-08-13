@@ -16,7 +16,10 @@
       </mat-error>
     </mat-form-field>
     <div>
-      <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button>
+      <!-- <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button> -->
+      <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()" aria-label="Show an example snack-bar">
+        Güncelle
+      </button>      
     </div>
   </form>
 </div>
