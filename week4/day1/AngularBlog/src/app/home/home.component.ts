@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
     .subscribe((data) => this.posts = data);
   }
   
-  openDialog(post: IPost, willUpdate: boolean) {
+  openDialog(post: IPost, willUpdate: boolean) {    
     const dialogRef = this.dialog.open(BlogDialogComponent, {
-      width: '450px',
+      // width: '450px',
       data: { post, willUpdate }
     });
     

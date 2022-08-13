@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IPost } from 'src/app/interfaces';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BlogService } from 'src/app/services/blog.service';
+import { CommentService } from 'src/app/services/comment.service';
 
 export interface IDialogData {
   post: IPost;
@@ -20,23 +21,43 @@ export class BlogDialogComponent implements OnInit {
     title: new FormControl(null, [Validators.required]),
     body: new FormControl(null, [Validators.required]),
   });
+  postElement?: IPost;
+  comments?: any[];
 
   constructor(
     private blogService: BlogService,
+    private commentService: CommentService,
     public dialogRef: MatDialogRef<BlogDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IDialogData
   ) {
+    // update
     if (data.willUpdate) {
       this.willUpdate = data.willUpdate;
       this.postForm.setValue({
         title: data.post.title,
-        body: data.post.body
+        body: data.post.body,
       });
+
+      // this.blogElement = data.post;
+    }
+
+    // show
+    else {
+      this.postElement = data.post;
     }
   }
 
   ngOnInit(): void {
-    window.addEventListener("keyup", (event) => event.key === "Esc" && this.dialogRef.close());
+    window.addEventListener(
+      'keyup',
+      (event) => event.key === 'Esc' && this.dialogRef.close()
+    );
+
+    this.commentService.getComments().subscribe((data: []) => {
+      this.comments = data.filter(
+        (it: any) => it?.postId === this.postElement?.id
+      );
+    });
   }
 
   closeDialog(): void {
@@ -49,13 +70,16 @@ export class BlogDialogComponent implements OnInit {
       body: this.postForm.get('body')?.value,
       imageId: this.data.post.imageId,
       userId: this.data.post.userId,
-      id: this.data.post.id
-    }
+      id: this.data.post.id,
+    };
 
-    this.blogService
-    .updatePost(updatedPost.id, updatedPost)
-    .subscribe(
-      (data) => this.dialogRef.close(data),
+    this.blogService.updatePost(updatedPost.id, updatedPost).subscribe(
+      (data) => {
+        this.dialogRef.close(data);
+        // usage 2
+        // this.blogElement.title = data.title;
+        // this.blogElement.body = data.body;
+      },
       (error) => console.log("couldn't retrive data from API")
     );
   }

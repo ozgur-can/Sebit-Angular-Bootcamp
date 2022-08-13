@@ -1,26 +1,49 @@
 <div class="d-flex flex-column">
-    <div class="d-flex justify-content-between align-items-center">
-        <h3 class="m-0">{{!willUpdate ? 'Post Show' : 'Post Edit '}}</h3>
-        <button mat-button class="fs-4" (click)="closeDialog()">X</button>
-    </div>
-    <form *ngIf="willUpdate" action="" [formGroup]="postForm" class="d-flex flex-column">
-        <mat-form-field>
-            <mat-label>Post title</mat-label>
-            <input class="w-100" matInput type="text" formControlName="title" placeholder="title..">
-            <mat-error *ngIf="postForm.get('title')?.hasError('required')">
-              Post title is must 
-            </mat-error>
-        </mat-form-field>
+  <div class="d-flex justify-content-between align-items-center">
+    <h3 class="m-0">{{!willUpdate ? 'Post Show' : 'Post Edit '}}</h3>
+    <button mat-button class="fs-4" (click)="closeDialog()">X</button>
+  </div>
+  <form *ngIf="willUpdate" action="" [formGroup]="postForm" class="d-flex flex-column" style="min-width: 500px;">
+    <mat-form-field>
+      <mat-label>Post title</mat-label>
+      <input class="w-100" matInput type="text" formControlName="title" placeholder="title..">
+      <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+        Post title is must
+      </mat-error>
+    </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Post body</mat-label>
-            <textarea matInput formControlName="body" cols="40" rows="6"></textarea>
-            <mat-error *ngIf="postForm.get('body')?.hasError('required')">
-              Post body is must
-            </mat-error>
-          </mat-form-field>
-        <div>
-            <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button>
-        </div>
-    </form>
+    <mat-form-field>
+      <mat-label>Post body</mat-label>
+      <textarea matInput formControlName="body" cols="40" rows="6"></textarea>
+      <mat-error *ngIf="postForm.get('body')?.hasError('required')">
+        Post body is must
+      </mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!willUpdate" class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <img class="w-100" src='assets/image{{postElement?.imageId}}.jpg'>
+    </div>
+    <div class="col-6">
+      <h2>{{postElement?.title}}</h2>
+      <p>{{postElement?.body}}</p>
+    </div>
+  </div>
+  <div *ngFor="let comment of comments" class="rounded m-4" style="background-color: lightblue;">
+    <div class="row">
+      <div class="col-2 d-flex align-items-center justify-content-center">
+        <img class="m-4 rounded-circle w-50" src='assets/profile/profile{{comment.userId}}.jpg' alt="">
+      </div>
+      <div class="col-10 d-flex flex-column p-1">
+        <h3 style="font-weight: bold;">{{comment.name}}</h3>
+        <p>{{comment.body}}</p>
+      </div>
+    </div>
+  </div>
 </div>
