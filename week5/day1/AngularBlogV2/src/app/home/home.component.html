@@ -18,8 +18,8 @@
           <p>{{postItem.body | slice:0:11}}...</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="openDialog(postItem, false)">Show</button>
-          <button mat-raised-button color="accent" (click)="openDialog(postItem, true)">Edit</button>
+          <button mat-raised-button color="primary" [routerLink]="['/view-blog', postItem.id]">Show</button>
+          <button mat-raised-button color="accent" [routerLink]="['/update-blog', postItem.id]">Edit</button>
         </mat-card-actions>
       </mat-card>
     </div>

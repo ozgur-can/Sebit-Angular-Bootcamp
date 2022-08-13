@@ -1,0 +1,22 @@
+<div class="d-flex d-flex align-items-center justify-content-center h-100">
+  <form action="" [formGroup]="postForm" class="d-flex flex-column rounded border border-secondary p-3" style="min-width: 500px;">
+    <mat-form-field>
+      <mat-label>Post title</mat-label>
+      <input class="w-100" matInput type="text" formControlName="title" placeholder="title..">
+      <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+        Post title is must
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Post body</mat-label>
+      <textarea matInput formControlName="body" cols="40" rows="6"></textarea>
+      <mat-error *ngIf="postForm.get('body')?.hasError('required')">
+        Post body is must
+      </mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" [disabled]="!postForm.valid" (click)="onSubmit()">Güncelle</button>
+    </div>
+  </form>
+</div>

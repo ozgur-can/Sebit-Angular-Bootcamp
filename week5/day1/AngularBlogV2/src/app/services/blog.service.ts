@@ -15,6 +15,10 @@ export class BlogService extends BaseService {
     return this.base.getReq('/posts');
   }
 
+  public getPostById(id: number) {
+    return this.base.getReq(`/posts/${id}`);
+  }
+
   public updatePost(id: number, data: IPost) {
     return this.base.putReq(`/posts/${id}`, data);
   }

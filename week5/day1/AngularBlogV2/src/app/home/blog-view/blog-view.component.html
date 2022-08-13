@@ -1,0 +1,25 @@
+<div class="d-flex flex-column">
+  <div class="container pt-4">
+    <div class="row px-4">
+      <div class="col-sm-12 col-md-3">
+        <!-- optional NGIF (bugfix) -->
+        <!-- added for handling too many image retrieving in one call, otherwise we get GET http://localhost:4200/assets/image.jpg err -->
+        <img class="w-100" *ngIf="post?.imageId !== null" src='assets/image{{post?.imageId}}.jpg'>
+      </div>
+      <div class="col-md-9 mt-3">
+        <h2>{{post?.title}}</h2>
+        <p>{{post?.body}}</p>
+      </div>
+    </div>
+    <div *ngFor="let comment of comments" class="rounded m-4" style="background-color: lightblue;">
+      <div class="row p-3">
+        <div class="col-3 d-flex align-items-center justify-content-center">
+          <img class="rounded-circle w-25" src='assets/profile/profile{{comment.userId}}.jpg' alt="">
+        </div>
+        <div class="col-9 d-flex flex-column p-1">
+          <h3 style="font-weight: bold;">{{comment.name}}</h3>
+          <p>{{comment.body}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -14,12 +14,16 @@ import { BlogDialogComponent } from './home/blog-dialog/blog-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
+import { BlogViewComponent } from './home/blog-view/blog-view.component';
+import { BlogUpdateComponent } from './home/blog-update/blog-update.component'; 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BlogDialogComponent,
+    BlogViewComponent,
+    BlogUpdateComponent,
   ],
   imports: [
     BrowserModule,
