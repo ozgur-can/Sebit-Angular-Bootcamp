@@ -17,14 +17,12 @@ import { MatInputModule } from '@angular/material/input';
 import { BlogViewComponent } from './home/blog-view/blog-view.component';
 import { BlogUpdateComponent } from './home/blog-update/blog-update.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NotificationComponent } from './home/notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BlogViewComponent,
     BlogUpdateComponent,
-    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,7 @@ import { NotificationComponent } from './home/notification/notification.componen
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [BaseService],
   bootstrap: [AppComponent],

@@ -14,8 +14,4 @@ export class CommentService extends BaseService {
   public getComments() {
     return this.base.getReq('/comments');
   }
-
-  // public getCommentWithId(id: number) {
-  //   return this.base.getReq(`/comments`);
-  // }
 }

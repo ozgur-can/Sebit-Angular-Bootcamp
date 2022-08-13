@@ -1,9 +1,9 @@
 <div class="d-flex flex-column">
-  <div class="d-flex justify-content-between align-items-center">
-    <h3 class="m-0">{{!willUpdate ? 'Post Show' : 'Post Edit '}}</h3>
+  <div class="d-flex justify-content-between align-items-center px-5">
+    <h2 class="m-0">{{!willUpdate ? 'Post Show' : 'Post Edit '}}</h2>
     <button mat-button class="fs-4" (click)="closeDialog()">X</button>
   </div>
-  <form *ngIf="willUpdate" action="" [formGroup]="postForm" class="d-flex flex-column" style="min-width: 500px;">
+  <form *ngIf="willUpdate" action="" [formGroup]="postForm" class="container d-flex flex-column" style="min-width: 500px;">
     <mat-form-field>
       <mat-label>Post title</mat-label>
       <input class="w-100" matInput type="text" formControlName="title" placeholder="title..">
@@ -26,23 +26,23 @@
 </div>
 
 <div *ngIf="!willUpdate" class="container">
-  <div class="row">
+  <div class="row m-3">
     <div class="col-sm-12 col-md-6">
       <img class="w-100" src='assets/image{{postElement?.imageId}}.jpg'>
     </div>
-    <div class="col-6">
+    <div class="col-sm-12 col-md-6">
       <h2>{{postElement?.title}}</h2>
       <p>{{postElement?.body}}</p>
     </div>
   </div>
   <div *ngFor="let comment of comments" class="rounded m-4" style="background-color: lightblue;">
     <div class="row">
-      <div class="col-2 d-flex align-items-center justify-content-center">
+      <div class="col-3 d-flex align-items-center justify-content-center">
         <img class="m-4 rounded-circle w-50" src='assets/profile/profile{{comment.userId}}.jpg' alt="">
       </div>
-      <div class="col-10 d-flex flex-column p-1">
+      <div class="col-9 d-flex flex-column justify-content-center">
         <h3 style="font-weight: bold;">{{comment.name}}</h3>
-        <p>{{comment.body}}</p>
+        <p class="w-100">{{comment.body}}</p>
       </div>
     </div>
   </div>

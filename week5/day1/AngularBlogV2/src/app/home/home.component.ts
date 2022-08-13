@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.getPostList();
   }
 
+  // get posts
   getPostList() {
     this.blogService
       .getPosts()

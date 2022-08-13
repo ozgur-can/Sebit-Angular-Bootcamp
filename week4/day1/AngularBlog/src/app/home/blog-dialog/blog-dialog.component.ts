@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { IPost } from 'src/app/interfaces';
+import { IComment, IPost } from 'src/app/interfaces';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BlogService } from 'src/app/services/blog.service';
 import { CommentService } from 'src/app/services/comment.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface IDialogData {
   post: IPost;
@@ -28,9 +29,10 @@ export class BlogDialogComponent implements OnInit {
     private blogService: BlogService,
     private commentService: CommentService,
     public dialogRef: MatDialogRef<BlogDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IDialogData
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData,
+    private snackBar: MatSnackBar,
   ) {
-    // update
+    // update / edit post
     if (data.willUpdate) {
       this.willUpdate = data.willUpdate;
       this.postForm.setValue({
@@ -38,28 +40,31 @@ export class BlogDialogComponent implements OnInit {
         body: data.post.body,
       });
 
-      // this.blogElement = data.post;
+      // alternative way for updating UI for updated post [1]
+      // this.postElement = data.post;
     }
 
-    // show
+    // show post
     else {
       this.postElement = data.post;
     }
   }
 
   ngOnInit(): void {
+    // close dialog box when "Esc" button is pressed
     window.addEventListener(
       'keyup',
-      (event) => event.key === 'Esc' && this.dialogRef.close()
+      (event: KeyboardEvent) => event.key === 'Esc' && this.dialogRef.close()
     );
 
     this.commentService.getComments().subscribe((data: []) => {
       this.comments = data.filter(
-        (it: any) => it?.postId === this.postElement?.id
+        (comment: IComment) => comment?.postId === this.postElement?.id
       );
     });
   }
 
+  // close dialog
   closeDialog(): void {
     this.dialogRef.close(true);
   }
@@ -74,13 +79,28 @@ export class BlogDialogComponent implements OnInit {
     };
 
     this.blogService.updatePost(updatedPost.id, updatedPost).subscribe(
-      (data) => {
+      (data: IPost) => {
+        // close dialog
         this.dialogRef.close(data);
-        // usage 2
-        // this.blogElement.title = data.title;
-        // this.blogElement.body = data.body;
+        
+        // alternative way for updating UI for updated post [2]
+        // this.postElement.title = data.title;
+        // this.postElement.body = data.body;
+
+        // show notification
+        this.snackBar.open('Post updated', undefined, {
+          duration: 2000,
+          verticalPosition: 'top',
+        });
       },
-      (error) => console.log("couldn't retrive data from API")
+      (error) => {
+        console.error("couldn't retrive data from API")
+        // show notification
+        this.snackBar.open('Post could not updated', undefined, {
+          duration: 2000,
+          verticalPosition: 'top',
+        });
+      }
     );
   }
 }
