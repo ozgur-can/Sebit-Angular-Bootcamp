@@ -1,0 +1,22 @@
+<div class="createArticle">
+    <mat-card class="createArticle__card">
+        <mat-card-content class="createArticle__card__content">
+            <mat-form-field>
+                <mat-label>Kullanıcı adı</mat-label>
+                <input matInput [(ngModel)]="username" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Başlık</mat-label>
+                <input matInput [(ngModel)]="title" />
+                <input matInput />
+            </mat-form-field>
+
+            <angular-editor [config]="editorConfig" [(ngModel)]="content"></angular-editor>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="createArticle__card__button" (click)="post()" mat-raised-button color="primary"
+                [routerLink]="['/home']">Kaydet</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

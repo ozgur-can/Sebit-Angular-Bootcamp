@@ -1,0 +1,11 @@
+<div class="home">
+    <button class="home__button" mat-raised-button color="primary" [routerLink]="['/create']">Yeni yazı
+        oluştur</button>
+    <mat-card *ngFor="let article of articles, let i = index" class="home__card" [routerLink]="['/view', i]">
+        <mat-card-content>
+            <h2>{{article.title}} </h2>
+            <p><b>Yazar:</b> {{article.author}}</p>
+            <p>{{article.content}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

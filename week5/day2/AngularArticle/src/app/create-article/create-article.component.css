@@ -1,0 +1,20 @@
+.createArticle {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.createArticle__card {
+    width: 50%;
+    border: 1px solid gray;
+}
+
+.createArticle__card__content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.createArticle__card__button {
+    width: 100%;
+}

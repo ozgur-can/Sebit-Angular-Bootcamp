@@ -1,0 +1,30 @@
+<div class="viewArticle">
+    <mat-card class="viewArticle__card">
+        <mat-card-content *ngIf="article" class="viewArticle__content">
+            <h2>{{article!.title}} </h2>
+            <p><b>Yazar:</b> {{article!.author}}</p>
+            <p>{{article!.content}}</p>
+            <mat-form-field>
+                <mat-label>Kullanıcı adı</mat-label>
+                <input matInput [(ngModel)]="comment!.author" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Yorum</mat-label>
+                <input matInput [(ngModel)]="comment!.body" />
+            </mat-form-field>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="viewArticle__button" (click)="submitComment()" mat-raised-button color="primary">Yorum
+                Yap</button>
+        </mat-card-actions>
+
+        <div class="viewArticle__comment">
+            <div *ngFor="let comment of article?.comments" class="viewArticle__comment__card">
+                <h2>{{comment.body}}</h2>
+                <p>{{comment.author}}</p>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,29 @@
+.viewArticle {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.viewArticle__card {
+    border: 1px solid gray;
+    width: 50%;
+}
+
+.viewArticle__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.viewArticle__button {
+    width: 100%;
+}
+
+.viewArticle__comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewArticle__comment__card {
+    text-align: center;
+}
