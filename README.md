@@ -46,9 +46,13 @@
 
 <div>
 
-**1. Angular Search App**
+**1. Search App**
 
 - Animated and responsive search component with Angular & Tailwind CSS <b><i>[code:books:](https://github.com/ozgurdevo/Angular-Search-App/) [live:rocket:](https://angular-search-app.netlify.app/)</i></b>
+
+**2. Wordle Game**
+
+- Wordle game with Angular, SCSS, Animations, NGRX/NGXS (still in dev.) <b><i>[code:books:](https://github.com/ozgurdevo/Angular-Wordle-Game/)</i></b>
 
 </div>
 
