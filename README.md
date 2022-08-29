@@ -10,9 +10,9 @@
 
 
 |       | Week 1                                                                                  | Week 2                                                                        | Week 3                                                                                              | Week 4                                                                            | Week 5                                                      | Week 6 |
-| ----- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------ |
-| Day 1 | [HTML & CSS](/week1/day1/)                                                              | [Bootstrap, DOM, Javascript](/week2/day1/)                                    | [Angular, Angular Material](/week3/day1/)                                                           | [Directives, Pipes, Material Dialog, Blog App with JSON API](/week4/day1/)        | [Routing, Blog App with JSON API (completed)](/week5/day1/) |        |
-| Day 2 | [Responsive Design, CSS Properties, Display, Position, Flex, Color, etc.](/week1/day2/) | [JS Data Types, Break-Continue, If-Else, Switch, Loops, Closure](/week2/day2) | [Reactive Forms, Angular Form Validators, Form Group, Form Builder, Abstract Control](/week3/day2/) | [Services, Dependency Injection, Blog App with JSON API (continue)](/week4/day1/) | [Article-Comment App with JSON API](/week5/day2/)           |        |
+| ------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- | -------- |
+| Day 1 | [HTML & CSS](/week1/day1/)                                                              | [Bootstrap, DOM, Javascript](/week2/day1/)                                    | [Angular, Angular Material](/week3/day1/)                                                           | [Directives, Pipes, Material Dialog, Blog App with JSON API](/week4/day1/)        | [Routing, Blog App with JSON API (completed)](/week5/day1/) | [Final Sebit Case](https://github.com/ozgurdevo/sebit-angular-case) 🏁     |
+| Day 2 | [Responsive Design, CSS Properties, Display, Position, Flex, Color, etc.](/week1/day2/) | [JS Data Types, Break-Continue, If-Else, Switch, Loops, Closure](/week2/day2) | [Reactive Forms, Angular Form Validators, Form Group, Form Builder, Abstract Control](/week3/day2/) | [Services, Dependency Injection, Blog App with JSON API (continue)](/week4/day1/) | [Article-Comment App with JSON API](/week5/day2/)           |  [Final Sebit Case](https://github.com/ozgurdevo/sebit-angular-case) 🏁    |
 
 <br>
 <h2 align="center"><b>Tasks / Assignments</b></h2>
@@ -54,6 +54,17 @@
 
 - Wordle game with Angular, SCSS, Animations, NGRX (still in dev.) <b><i>[code:books:](https://github.com/ozgurdevo/Angular-Wordle-Game/) [live:rocket:](https://angular-wordle-game.netlify.app/)</i></b>
 
+</div>
+
+<br>
+<h2 align="center"><b>Final - Sebit Angular Case</b></h2>
+<br>
+
+<div>
+
+**[Project Link](https://github.com/ozgurdevo/sebit-angular-case)**
+- <i><b>Services, Pipes, Modules</i></b>
+- <i><b>SCSS, Tailwind CSS</i></b>
 </div>
 
 <br>
